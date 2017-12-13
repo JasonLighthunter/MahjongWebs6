@@ -1,25 +1,2 @@
 <h2>Games</h2>
-<div class="card" *ngFor="let game of games">
-  <div class="card-body">
-    <p>id: {{game.id}}</p>
-    <p>min: {{game.minPlayers}}</p>
-    <p>max: {{game.maxPlayers}}</p>
-    <div [ngSwitch]="game.players.length">
-      <div *ngSwitchDefault>
-        Players
-        <ul>
-          <li *ngFor="let player of game.players">{{player.name}}</li>
-        </ul>
-      </div>
-      <div *ngSwitchCase="false">
-        <p><i>No players</i></p>       
-      </div>
-    </div>
-    <p>state: {{game.state}}</p>
-    <p>template: {{game.gameTemplate.id}}</p>
-    <p>
-      <button class="btn btn-primary" [disabled]="!canJoin(game.id)" (click)="join(game.id)">Join</button>
-      <button class="btn btn-success" [disabled]="!canStart(game.id)" (click)="start(game.id)">Start</button>
-    </p>
-  </div>
-</div>
+<app-game class="card" *ngFor="let game of games" [game]="game"></app-game>

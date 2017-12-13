@@ -8,17 +8,23 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
 import { GameCreateComponent } from './game-create/game-create.component';
+import { GameComponent } from './game/game.component';
 
 import { GameService } from './game.service';
 import { GameTemplateService } from './game-template.service';
 
 import { InMemoryDataService } from './in-memory-data.service';
+// import { TemplatePreviewComponent } from './template-preview/template-preview.component';
+// import { TileComponent } from './tile/tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
-    GameCreateComponent
+    GameCreateComponent,
+    GameComponent,
+    // TemplatePreviewComponent,
+    // TileComponent
   ],
   imports: [
     BrowserModule,

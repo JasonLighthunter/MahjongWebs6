@@ -4,9 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
-import { GameTemplate } from './game-template';
+import { GameTemplate, MOCK_GAME_TEMPLATES } from './game-template';
 
 @Injectable()
 export class GameTemplateService {
@@ -16,7 +16,7 @@ export class GameTemplateService {
 
   gameTemplatesChanged$ = this.gameTemplatesSource.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(protected http: HttpClient) { }
 
   getGameTemplates() {
     this.http.get<GameTemplate[]>(this.gameTemplateUrl)
@@ -32,5 +32,22 @@ export class GameTemplateService {
       console.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     };
+  }
+}
+
+@Injectable()
+export class MockGameTemplateService extends GameTemplateService {
+  private templates = MOCK_GAME_TEMPLATES;
+
+  private mockedGameTemplatesSource = new Subject<GameTemplate[]>();
+
+  gameTemplatesChanged$ = this.mockedGameTemplatesSource.asObservable();
+
+  constructor(protected http: HttpClient) {
+    super(http);
+  }
+
+  getGameTemplates() {
+    this.mockedGameTemplatesSource.next(this.templates);
   }
 }

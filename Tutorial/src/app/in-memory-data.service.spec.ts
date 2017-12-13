@@ -9,7 +9,7 @@ describe('InMemoryDataService', () => {
     });
   });
 
-  it('should be created', inject([InMemoryDataService], (service: InMemoryDataServiceService) => {
+  it('should be created', inject([InMemoryDataService], (service: InMemoryDataService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -1,6 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+import { GameService, MockGameService } from '../game.service'; 
+
+import { Game, MOCK_GAMES } from '../game';
+import { PostGame } from '../post-game';
+
+import { GameComponent } from '../game/game.component';
 import { GamesComponent } from './games.component';
+
 
 describe('GamesComponent', () => {
   let component: GamesComponent;
@@ -8,7 +16,16 @@ describe('GamesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GamesComponent ]
+      declarations: [ 
+        GamesComponent,
+        GameComponent
+      ],
+      imports: [
+        HttpClientModule
+      ],
+      providers: [
+        { provide: GameService, useClass: MockGameService }
+      ]
     })
     .compileComponents();
   }));
@@ -21,5 +38,10 @@ describe('GamesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have 4 games', () => {
+    expect(component.games).toBeDefined();
+    expect(component.games.length).toBe(4);
   });
 });

@@ -12,13 +12,13 @@
       </div>
       <div class="form-group">
         <label for="templateName">choose your template</label>
-        <!-- <input class="form-control" [(ngModel)]="game.templateName" type="text" id="templateName" required> -->
-        <select [(ngModel)]="game.templateName" (ngModelChange)="validate()">
-          <option>-Select your Template-</option>
-          <option *ngFor="let x of gameTemplates" [value]="x.id">{{x.id}}</option>
+        <select [(ngModel)]="game.templateName" (ngModelChange)="onDropDownChange($event)">
+          <option *ngFor="let x of gameTemplates" [ngValue]="x">{{x.id}}</option>
         </select>
       </div>
       <button class="btn btn-primary" [disabled]="!isValid" (click)="save()">Submit</button>
     </div>
   </div>
 </div>
+
+<!-- <app-template-preview [template]="selectedTemplate"></app-template-preview> -->
