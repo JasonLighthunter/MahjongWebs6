@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/game/components/game-create/game-create.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/app/game/components/game-create</a> game-create.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>13/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.73% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+&nbsp;
+import { UserService, User} from '../../../user/user.module';
+import { GameTemplate, MOCK_GAME_TEMPLATES, GameTemplateService } from '../../../game-template/game-template.module';
+&nbsp;
+import { PostGame } from '../../models/post-game';
+&nbsp;
+import { GameService } from '../../services/game.service';
+&nbsp;
+@Component({
+  selector: 'app-game-create',
+  templateUrl: './game-create.component.html',
+  styleUrls: ['./game-create.component.scss']
+})
+export class GameCreateComponent implements OnInit {
+<span class="cstat-no" title="statement not covered" >  game: PostGame = new PostGame();</span>
+  gameTemplates: GameTemplate[];
+  user: User;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  selectedTemplate: GameTemplate = undefined</span>
+&nbsp;
+  isValid: boolean
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  constructor(</span></span>
+    private <span class="cstat-no" title="statement not covered" >gameService: GameService,</span>
+    private <span class="cstat-no" title="statement not covered" >gameTemplateService: GameTemplateService,</span>
+    private <span class="cstat-no" title="statement not covered" >userService: UserService</span>
+  ) {
+<span class="cstat-no" title="statement not covered" >    this.gameTemplateService.gameTemplatesChanged$</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >templates =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.gameTemplates = templates;</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedTemplate = templates[0];</span>
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.userService.loggedInUserChanged$</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >user =&gt; <span class="cstat-no" title="statement not covered" >this.user = user)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.gameTemplateService.getGameTemplates();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.game.minPlayers = 2;</span>
+<span class="cstat-no" title="statement not covered" >    this.game.maxPlayers = 2;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.validate();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  save() {</span>
+<span class="cstat-no" title="statement not covered" >    this.game.templateName = this.selectedTemplate.id;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.gameService</span>
+      .addGame(this.game, this.user)
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onDropDownChange(</span>event) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.selectedTemplate = event;</span>
+<span class="cstat-no" title="statement not covered" >    this.validate();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  validate() {</span>
+    var min = <span class="cstat-no" title="statement not covered" >this.game.minPlayers;</span>
+    var max = <span class="cstat-no" title="statement not covered" >this.game.maxPlayers;</span>
+    var template = <span class="cstat-no" title="statement not covered" >this.selectedTemplate;</span>
+&nbsp;
+    var minPlayersIsValid = (<span class="cstat-no" title="statement not covered" >min &lt; 7 &amp;&amp; min &gt; 0)</span>;
+    var maxPlayersIsValid = (<span class="cstat-no" title="statement not covered" >max &lt; 7 &amp;&amp; max &gt; 1)</span>;
+    var minIsLessThanMax = (<span class="cstat-no" title="statement not covered" >min &lt;= max)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.isValid = (</span>
+      minPlayersIsValid &amp;&amp; 
+      maxPlayersIsValid &amp;&amp; 
+      minIsLessThanMax 
+    );
+  }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 16 2018 14:31:44 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

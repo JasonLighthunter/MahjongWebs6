@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/game/components/game-board/game-board.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/app/game/components/game-board</a> game-board.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.53% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.95% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/61</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, NgZone } from '@angular/core';
+&nbsp;
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+&nbsp;
+import { UserService, User} from '../../../user/user.module';
+&nbsp;
+import { Game } from '../../models/game';
+import { GameService } from '../../services/game.service';
+import { MatchingService } from '../../services/matching.service';
+import { SocketService } from '../../../socket.service';
+&nbsp;
+import { Tile } from '../../../tile/tile.module';
+&nbsp;
+@Component({
+  selector: 'app-game-board',
+  templateUrl: './game-board.component.html',
+  styleUrls: ['./game-board.component.scss']
+})
+&nbsp;
+export class GameBoardComponent implements OnInit {
+  game : Game
+  tiles : Tile[]
+  user: User;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  selectedTile : string = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  activeTab: string = 'board'</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  id = this.route.snapshot.paramMap.get('id');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  constructor(</span></span>
+    private <span class="cstat-no" title="statement not covered" >route: ActivatedRoute,</span>
+    private <span class="cstat-no" title="statement not covered" >gameService: GameService,</span>
+    private <span class="cstat-no" title="statement not covered" >location: Location,</span>
+    private <span class="cstat-no" title="statement not covered" >matchingService: MatchingService,</span>
+    private <span class="cstat-no" title="statement not covered" >userService: UserService,</span>
+    private <span class="cstat-no" title="statement not covered" >socketService: SocketService,</span>
+    private <span class="cstat-no" title="statement not covered" >zone: NgZone</span>
+    ) {
+<span class="cstat-no" title="statement not covered" >    this.gameService.gameChanged$</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >game =&gt; <span class="cstat-no" title="statement not covered" >this.game = game)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    this.gameService.tilesChanged$</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >tiles =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.zone.run(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          this.tiles = tiles;</span>
+        });
+      });
+<span class="cstat-no" title="statement not covered" >    this.userService.loggedInUserChanged$</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >user =&gt; <span class="cstat-no" title="statement not covered" >this.user = user)</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.socketService.connectToGame(this.id);</span>
+<span class="cstat-no" title="statement not covered" >    this.socketService.match</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >data =&gt; { <span class="cstat-no" title="statement not covered" >this.getGame() </span>});</span>
+  }
+  
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.getGame();</span>
+<span class="cstat-no" title="statement not covered" >    this.userService.getLoggedInUser();</span>
+&nbsp;
+&nbsp;
+&nbsp;
+    const BASE_URL = <span class="cstat-no" title="statement not covered" >'http://mahjongmayhem.herokuapp.com?gameId=' + this.id;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getGame(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.gameService.getGame(this.id)</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  setTab(</span>newTab : string) {
+<span class="cstat-no" title="statement not covered" >    if (newTab != this.activeTab) {</span>
+<span class="cstat-no" title="statement not covered" >      this.activeTab = newTab</span>
+    }
+<span class="cstat-no" title="statement not covered" >    console.log(this.tiles);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  deselectSelectedTile() {</span></span>
+    var id = <span class="cstat-no" title="statement not covered" >this.tiles.findIndex(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >t.tile.id === this.selectedTile)</span>;</span></span>
+<span class="cstat-no" title="statement not covered" >    this.tiles[id].isSelected = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.selectedTile = null;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  selectTile(</span>tile: Tile) {</span>
+<span class="cstat-no" title="statement not covered" >    if(this.selectedTile === tile.tile.id){</span>
+<span class="cstat-no" title="statement not covered" >      this.deselectSelectedTile();</span>
+    } else <span class="cstat-no" title="statement not covered" >if (this.selectedTile === null) {</span>
+<span class="cstat-no" title="statement not covered" >      if(this.matchingService.isSelectable(43, 33, tile, this.tiles)) {</span>
+        var id = <span class="cstat-no" title="statement not covered" >this.tiles.findIndex(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >t.tile.id === tile.tile.id)</span>;</span></span>
+<span class="cstat-no" title="statement not covered" >        this.tiles[id].isSelected = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedTile = tile.tile.id;</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        alert("you can't select this tile!");</span>
+      }
+    } else {
+<span class="cstat-no" title="statement not covered" >      if(this.matchingService.isSelectable(43, 33, tile, this.tiles)) {</span>
+        var id = <span class="cstat-no" title="statement not covered" >this.tiles.findIndex(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >t.tile.id === this.selectedTile)</span>;</span></span>
+        var previousTile: Tile = <span class="cstat-no" title="statement not covered" >this.tiles[id]</span>
+        // console.log('check match' + tile.tile.name);
+        // console.log(tile)
+<span class="cstat-no" title="statement not covered" >        if(this.matchingService.doMatch(tile, previousTile)) {</span>
+          // alert("match!");
+          // console.log(this.user);
+<span class="cstat-no" title="statement not covered" >          this.gameService.postMatch(this.game.id, tile, previousTile, this.user);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          alert("no match");</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.deselectSelectedTile();</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        alert("you can't select this tile!");</span>
+      }
+    }    
+  }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 16 2018 14:31:44 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

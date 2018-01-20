@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/game/services/game.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/game/services</a> game.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>31/75</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>26/64</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+&nbsp;
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+&nbsp;
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { of } from 'rxjs/observable/of';
+import { catchError, map, tap } from 'rxjs/operators';
+&nbsp;
+import { User } from '../../user/user.module';
+import { Game, MOCK_GAMES } from '../models/game';
+import { PostGame } from '../models/post-game';
+import { PostMatch } from '../models/post-match';
+&nbsp;
+import { GameState } from '../models/game-state.enum';
+&nbsp;
+import { PLAYERONE } from '../../models/person';
+&nbsp;
+import { Tile } from '../../tile/tile.module';
+&nbsp;
+@Injectable()
+export class GameService {
+  private gameUrl = 'http://mahjongmayhem.herokuapp.com/games';
+&nbsp;
+  private gamesSource = new Subject&lt;Game[]&gt;();
+  private gameSource = new Subject&lt;Game&gt;();
+&nbsp;
+  private tilesSource = new Subject&lt;Tile[]&gt;();
+&nbsp;
+  gamesChanged$ = this.gamesSource.asObservable();
+  gameChanged$ = this.gameSource.asObservable();
+&nbsp;
+  tilesChanged$ = this.tilesSource.asObservable();
+&nbsp;
+  constructor(protected http: HttpClient) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  getGames() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.http.get&lt;Game[]&gt;(this.gameUrl)</span>
+      .pipe(
+        catchError(this.handleError('getHeroes', []))
+      )
+      .subscribe(<span class="fstat-no" title="function not covered" >games =&gt; <span class="cstat-no" title="statement not covered" >this.gamesSource.next(games))</span>;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  getGame(</span>id: string) {</span>
+<span class="cstat-no" title="statement not covered" >    this.http.get&lt;Game&gt;(this.gameUrl + '/' + id)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >game =&gt; <span class="cstat-no" title="statement not covered" >this.gameSource.next(game))</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.http.get&lt;Tile[]&gt;(this.gameUrl + '/' + id + '/tiles')</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >tiles =&gt; {</span>
+        // console.log(tiles);
+<span class="cstat-no" title="statement not covered" >        this.tilesSource.next(tiles);</span>
+      });
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  addGame(</span>postGame: PostGame, user: User) {</span>
+    let httpOptions = <span class="cstat-no" title="statement not covered" >{</span>
+      headers : new HttpHeaders(
+      {
+        'Content-Type':'application/json',
+        'x-username': user.username,
+        'x-token': user.token
+      })
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.http.post&lt;Game&gt;(this.gameUrl, postGame, httpOptions)</span>
+    .subscribe(
+<span class="fstat-no" title="function not covered" >      data =&gt; { </span>
+<span class="cstat-no" title="statement not covered" >        this.getGames()</span>
+      },
+<span class="fstat-no" title="function not covered" >      (</span>err : HttpErrorResponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.error(err.statusText);</span>
+<span class="cstat-no" title="statement not covered" >        console.error(err.message);</span>
+      }
+    )
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  joinGame(</span>game: Game, user : User) {</span>
+    let httpOptions = <span class="cstat-no" title="statement not covered" >{</span>
+      headers : new HttpHeaders(
+      {
+        'Content-Type':'application/json',
+        'x-username': user.username,
+        'x-token': user.token
+      })
+    };
+&nbsp;
+    var joinUrl = <span class="cstat-no" title="statement not covered" >this.gameUrl + '/' + game.id + '/players';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.http.post(joinUrl, {}, httpOptions)</span>
+    .subscribe(
+<span class="fstat-no" title="function not covered" >      data =&gt; { </span>
+<span class="cstat-no" title="statement not covered" >        this.getGames()</span>
+      },
+<span class="fstat-no" title="function not covered" >      (</span>err : HttpErrorResponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.error(err.statusText);</span>
+<span class="cstat-no" title="statement not covered" >        console.error(err.message);</span>
+      }
+    )
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  startGame(</span>game: Game, user: User) {</span>
+    let httpOptions = <span class="cstat-no" title="statement not covered" >{</span>
+      headers : new HttpHeaders(
+      {
+        'Content-Type':'application/json',
+        'x-username': user.username,
+        'x-token': user.token
+      })
+    };
+&nbsp;
+    var startUrl = <span class="cstat-no" title="statement not covered" >this.gameUrl + '/' + game.id + '/start'</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.http.post(startUrl, {}, httpOptions)</span>
+    .subscribe(
+<span class="fstat-no" title="function not covered" >      data =&gt; { </span>
+<span class="cstat-no" title="statement not covered" >        this.getGames()</span>
+      },
+<span class="fstat-no" title="function not covered" >      (</span>err : HttpErrorResponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.error(err.statusText);</span>
+<span class="cstat-no" title="statement not covered" >        console.error(err.message);</span>
+      }
+    )
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  postMatch(</span>gameId: string, tile1: Tile, tile2: Tile, user: User) {
+    let httpOptions = <span class="cstat-no" title="statement not covered" >{</span>
+      headers : new HttpHeaders(
+      {
+        'Content-Type':'application/json',
+        'x-username': user.username,
+        'x-token': user.token
+      })
+    };
+&nbsp;
+    var postMatch: PostMatch = <span class="cstat-no" title="statement not covered" >{</span>
+      tile1Id: tile1._id,
+      tile2Id: tile2._id
+    };
+&nbsp;
+    var matchUrl = <span class="cstat-no" title="statement not covered" >this.gameUrl + '/' + gameId + '/tiles/matches'</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.http.post(matchUrl, postMatch, httpOptions)</span>
+    .subscribe(
+<span class="fstat-no" title="function not covered" >      data =&gt; {},</span>
+<span class="fstat-no" title="function not covered" >      (</span>err : HttpErrorResponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.error(err.statusText);</span>
+<span class="cstat-no" title="statement not covered" >        console.error(err.message);</span>
+      }
+      )
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected handleError&lt;T&gt; (<span class="cstat-no" title="statement not covered" ></span>operation = 'operation',</span> result?: T) {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >(</span>error: any): Observable&lt;T&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      console.error(error);</span>
+<span class="cstat-no" title="statement not covered" >      return of(result as T);</span>
+    };
+  }
+}
+&nbsp;
+@Injectable()
+export class MockGameService extends GameService {
+  private <span class="cstat-no" title="statement not covered" >games = MOCK_GAMES;</span>
+&nbsp;
+  private <span class="cstat-no" title="statement not covered" >mockedGamesSource = new Subject&lt;Game[]&gt;();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  gamesChanged$ = this.mockedGamesSource.asObservable();</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(protected <span class="cstat-no" title="statement not covered" ></span>http: HttpClient)</span> {
+<span class="cstat-no" title="statement not covered" >    super(http);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getGames() {</span>
+<span class="cstat-no" title="statement not covered" >    this.mockedGamesSource.next(this.games);</span>
+  }
+&nbsp;
+  // addGame(postGame: PostGame): Observable&lt;Game&gt; {
+  //   var headers = new HttpHeaders({
+  //     'Content-Type':'application/json',
+  //     'x-username':'JobCuppen',
+  //     'x-token':'test'
+  //   });
+&nbsp;
+  //   var newGame = {
+  //     gameTemplate: {
+  //       id: postGame.templateName
+  //     },
+  //     createdOn: Date.now().toString,
+  //     startedOn: null,
+  //     endedOn: null,
+  //     createdBy: {
+  //       name: 'Job Cuppen'
+  //     },
+  //     minPlayers: postGame.minPlayers,
+  //     maxPlayers: postGame.maxPlayers,
+  //     players: [
+  //     ],
+  //     state: GameState.open
+  //   }
+  //   return this.http.post&lt;Game&gt;(this.gameUrl, newGame, httpOptions)
+  //   .pipe(
+  //     tap(_ =&gt; this.getGames()),
+  //     catchError(this.handleError&lt;Game&gt;('addGame'))
+  //     );
+  // }
+&nbsp;
+  // joinGame(game: Game) {
+  //   var headers = new HttpHeaders({
+  //     'Content-Type':'application/json',
+  //     'x-username':'JobCuppen',
+  //     'x-token':'test'
+  //   });
+&nbsp;
+  //   var updatedGame = game;
+  //   updatedGame.players.push(PLAYERONE)
+&nbsp;
+  //   return this.http.put(this.gameUrl, updatedGame, httpOptions)
+  //     .pipe(
+  //       tap(_ =&gt; this.getGames()),
+  //       catchError(this.handleError&lt;any&gt;('joinGame'))
+  //     );
+  // }
+&nbsp;
+  // startGame(game: Game) {
+  //   var headers = new HttpHeaders({
+  //     'Content-Type':'application/json',
+  //     'x-username':'JobCuppen',
+  //     'x-token':'test'
+  //   });
+&nbsp;
+  //   var updatedGame = game;
+  //   updatedGame.state = GameState.playing;
+&nbsp;
+  //   return this.http.put(this.gameUrl, updatedGame, httpOptions)
+  //     .pipe(
+  //       tap(_ =&gt; this.getGames()),
+  //       catchError(this.handleError&lt;any&gt;('startGame'))
+  //     );
+  // }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 16 2018 14:31:44 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>
