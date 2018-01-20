@@ -1,2 +1,40 @@
-<h2>Games</h2>
-<app-game class="card" *ngFor="let game of games" [game]="game"></app-game>
+<div class="container">
+  <div class="games">
+    <h2>Games</h2>
+    <a routerLink="/dashboard/all">
+      <button class="btn btn-default">All</button>
+    </a>
+    <a routerLink="/dashboard/open">
+      <button class="btn btn-default">Open</button>
+    </a>
+    <a routerLink="/dashboard/mine">
+      <button class="btn btn-default">Mine</button>
+    </a>
+    <a routerLink="/dashboard/active">
+      <button class="btn btn-default">Active</button>
+    </a>
+    <div [ngSwitch]="lobbyType">
+      <div *ngSwitchCase="1">
+        <div class="open-games-container">
+          <app-game class="card game" *ngFor="let game of (games | openGames)" [game]="game"></app-game>
+        </div>
+      </div>
+      <div *ngSwitchCase="2">
+        <div class="my-games-container">
+          <app-game class="card game" *ngFor="let game of (games | myGames: loggedInUser)" [game]="game"></app-game>
+        </div>
+      </div>
+      <div *ngSwitchCase="3">
+        <div class="active-games-container">
+          <app-game class="card game" *ngFor="let game of (games | activeGames)" [game]="game"></app-game>
+        </div>
+      </div>
+      <div *ngSwitchDefault>
+        <div class="games-container">
+          <app-game class="card game" *ngFor="let game of games" [game]="game"></app-game>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-game-create class="games-create"></app-game-create>
+</div>

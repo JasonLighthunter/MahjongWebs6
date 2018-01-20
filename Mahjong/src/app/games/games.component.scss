@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:    auto;
+  grid-template-areas:
+    "games-list games-list game-create";
+  justify-content: center;
+}
+
+@mixin games-mixin($area) {
+  grid-area: $area;
+  justify-self: center;
+}
+.games {
+  @include games-mixin(games-list);
+}
+
+.game-create {
+  @include games-mixin(game-create);
+}
+
+%games-container-shared {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.games-container {
+  @extend %games-container-shared;
+}
+
+.open-games-container {
+  @extend %games-container-shared;
+}
+
+.active-games-container {
+  @extend %games-container-shared;
+}
+
+.my-games-container {
+  @extend %games-container-shared;
+}
+
+.game {
+  margin: 30px;
+}

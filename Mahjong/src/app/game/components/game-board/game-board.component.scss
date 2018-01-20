@@ -1,0 +1,12 @@
+@import '../../../../styles';
+
+$halfTileHeight: $tileHeight / 2;
+$halfTileWidth: $tileWidth / 2;
+
+.active {
+  border: 2px solid grey;
+  border-radius: 3px;
+}
+.container {
+  @include grid-mixin($halfTileHeight, $halfTileWidth, $halfTileWidth, $halfTileHeight);
+}

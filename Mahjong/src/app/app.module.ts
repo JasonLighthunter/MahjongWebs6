@@ -2,45 +2,53 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { GameModule } from './game/game.module';
+import { LoginModule } from './login/login.module';
 
 import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
-import { GameCreateComponent } from './game-create/game-create.component';
-import { GameComponent } from './game/game.component';
 
-import { GameService } from './game.service';
-import { GameTemplateService } from './game-template.service';
+import { LoginCallbackComponent } from './login/login.module';
+import { GameBoardComponent } from './game/game.module';
+import { OpenGamesPipe } from './pipes/open-games-pipe.pipe';
+import { MyGamesPipe } from './pipes/my-games.pipe';
+import { ActiveGamesPipe } from './pipes/active-games.pipe';
 
-import { InMemoryDataService } from './in-memory-data.service';
-// import { TemplatePreviewComponent } from './template-preview/template-preview.component';
-// import { TileComponent } from './tile/tile.component';
+import { SocketService } from './socket.service';
+
+const appRoutes: Routes = [
+  { path: '', component: GamesComponent },
+  { path: 'board/:id', component: GameBoardComponent },
+  { path: 'dashboard/:status', component: GamesComponent },
+  { path: 'loginCallback', component: LoginCallbackComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
-    GameCreateComponent,
-    GameComponent,
-    // TemplatePreviewComponent,
-    // TileComponent
+    OpenGamesPipe,
+    MyGamesPipe,
+    ActiveGamesPipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(
-
-      InMemoryDataService, {
-        dataEncapsulation: false,
-        passThruUnknownUrl: true
-      }
+    GameModule,
+    LoginModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   providers: [
-    GameService,
-    GameTemplateService
+    OpenGamesPipe,
+    MyGamesPipe,
+    ActiveGamesPipe,
+    SocketService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,4 @@
+@import '../../../../styles';
+.container {
+  @include grid-mixin(10px, 10px, 10px, 10px);
+}

@@ -1,0 +1,12 @@
+@import '~bootstrap/scss/bootstrap';
+/* You can add global styles to this file, and also import other style files */
+@mixin grid-mixin($template-rows, $template-columns, $auto-columns, $auto-rows) {
+  display: grid;
+  grid-template-rows: $template-rows;
+  grid-template-columns: $template-columns;
+  grid-auto-columns: $auto-columns;
+  grid-auto-rows: $auto-rows;
+}
+
+$tileHeight: 85px;
+$tileWidth: 65px;

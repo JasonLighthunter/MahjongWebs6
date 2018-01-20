@@ -1,0 +1,9 @@
+<div *ngIf="user; else elseBlock">
+  <p>
+    Welcome {{user.username}}
+    <button (click)="logout()">Logout</button>
+  </p>
+</div>
+<ng-template #elseBlock>
+ <button (click)="login()">Login</button>
+</ng-template>

@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { GameService, MockGameService } from '../game.service'; 
+import { GameService, MockGameService } from '../game/services/game.service'; 
 
-import { Game, MOCK_GAMES } from '../game';
-import { PostGame } from '../post-game';
+import { Game, MOCK_GAMES } from '../game/models/game';
+import { PostGame } from '../game/models/post-game';
 
-import { GameComponent } from '../game/game.component';
+import { GameComponent } from '../game/components/game/game.component';
 import { GamesComponent } from './games.component';
 
 

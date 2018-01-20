@@ -1,0 +1,155 @@
+@import '../../../../styles';
+
+.dragon-green {
+  background-position: -693px -749px;
+}
+.dragon-red {
+  background-position: -633px -750px;
+}
+.dragon-white {
+  background-position: -755px -670px;
+}
+
+.wind-east {
+  background-position: -630px -257px;
+}
+.wind-west {
+  background-position: -691px -257px;
+}
+.wind-north {
+  background-position: -813px -257px;
+}
+.wind-south {
+  background-position: -754px -257px;
+}
+
+.bamboo-1 {
+  background-position: -76px -504px;
+}
+.bamboo-2 {
+  background-position: -140px -504px;
+}
+.bamboo-3 {
+  background-position: -199px -504px;
+}
+.bamboo-4 {
+  background-position: -262px -504px;
+}
+.bamboo-5 {
+  background-position: -320px -504px;
+}
+.bamboo-6 {
+  background-position: -383px -504px;
+}
+.bamboo-7 {
+  background-position: -443px -339px;
+}
+.bamboo-8 {
+  background-position: -507px -504px;
+}
+.bamboo-9 {
+  background-position: -569px -340px;
+}
+
+.character-1 {
+  background-position: -78px -753px;
+}
+.character-2 {
+  background-position: -141px -753px;
+}
+.character-3 {
+  background-position: -201px -753px;
+}
+.character-4 {
+  background-position: -263px -753px;
+}
+.character-5 {
+  background-position: -324px -753px;
+}
+.character-6 {
+  background-position: -386px -753px;
+}
+.character-7 {
+  background-position: -448px -753px;
+}
+.character-8 {
+  background-position: -511px -753px;
+}
+.character-9 {
+  background-position: -570px -666px;
+}
+
+$season-x: -630px;
+.season-summer {
+  background-position: $season-x -506px;
+}
+.season-autumn {
+  background-position: $season-x -422px;
+}
+.season-winter {
+  background-position: $season-x -340px;
+}
+.season-spring {
+  background-position: $season-x -586px;
+}
+
+$circle-y: -175px;
+.circle-1 {
+  background-position: -78px $circle-y;
+}
+.circle-2 {
+  background-position: -137px $circle-y;
+}
+.circle-3 {
+  background-position: -200px $circle-y;
+}
+.circle-4 {
+  background-position: -260px $circle-y;
+}
+.circle-5 {
+  background-position: -324px $circle-y;
+}
+.circle-6 {
+  background-position: -384px $circle-y;
+}
+.circle-7 {
+  background-position: -448px $circle-y;
+}
+.circle-8 {
+  background-position: -507px $circle-y;
+}
+.circle-9 {
+  background-position: -569px $circle-y;
+}
+
+$flower-x: -692px;
+.flower-orchid {
+  background-position: $flower-x -341px;
+}
+.flower-plum {
+  background-position: $flower-x -422px;
+}
+.flower-chrysantememum {
+  background-position: $flower-x -504px;
+}
+.flower-bamboo {
+  background-position: $flower-x -586px;
+}
+
+@mixin tile-border($color) {
+  border: 3px solid $color !important;
+}
+
+.is-selected {
+  @include tile-border(red);
+}
+
+div:hover {
+  @include tile-border(blue);
+}
+
+div {
+  height: $tileHeight;
+  width: $tileWidth;
+  background-image: url('../../../../assets/tiles.jpg');
+}

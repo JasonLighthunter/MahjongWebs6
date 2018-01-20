@@ -1,0 +1,26 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{'active': activeTab=='board'}" (click)="setTab('board')">Board</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{'active': activeTab=='turns'}" (click)="setTab('turns')">Turns</a>
+  </li>
+</ul>
+<div [ngSwitch]="activeTab">
+  <div *ngSwitchCase="'board'">
+    <div class="container">
+      <app-board-tile *ngFor="let tile of (tiles | unmatched)" [tile]="tile" (click)="selectTile(tile)"></app-board-tile>
+    </div>
+  </div>
+  <div *ngSwitchCase="'turns'">
+    <div>
+      <p> This is a list of Turns </p>
+      <app-tile-match *ngFor="let tile of (tiles | matched)" [tile]="tile" [tiles]="tiles"></app-tile-match>
+    </div>
+  </div>
+  <div *ngSwitchDefault>
+    <div class="container">
+      <app-board-tile *ngFor="let tile of (tiles | unmatched)" [tile]="tile" (click)="selectTile(tile)"></app-board-tile>
+    </div>
+  </div>
+</div>
