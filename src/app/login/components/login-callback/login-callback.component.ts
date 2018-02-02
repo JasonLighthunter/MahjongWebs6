@@ -24,7 +24,8 @@ export class LoginCallbackComponent implements OnInit {
       }
       this.userService.updateLoggedInUser(user);
 
-      this.router.navigate(['dashboard']);
+// dashboard to ''
+      this.router.navigate(['']);
     });
   }
 }

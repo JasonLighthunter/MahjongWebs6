@@ -35,12 +35,13 @@ export class GameComponent implements OnInit {
       game.state == GameState.finished ||
       game.players.length >= game.maxPlayers ||
       this.user === undefined
+       || this.user === null //added this line
       ) 
     {
       return false;
     }
 
-    var username =  this.user.username;
+    var username = this.user.username;
 
     if(game.players.find(player => player._id == this.user.username) !== undefined) {
       return false;
@@ -55,8 +56,11 @@ export class GameComponent implements OnInit {
       return false;
     }
 
-    if(game.state == GameState.open) {
-      var username =  this.user.username;
+    if(game.state == GameState.open
+     && this.user !== null // added this line
+     ) {
+
+      var username = this.user.username
 
       if(game.players.find(player => player._id == this.user.username) !== undefined) {
         return true;
